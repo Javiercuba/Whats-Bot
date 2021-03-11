@@ -4,14 +4,9 @@ import time
 import csv
 import pandas as pd
 
-
 class WhatsappBot():
 
     def __init__(self):
-        # Parte 1 - A mensagem que você quer enviar
-       
-        # Parte 2 - Nome dos grupos ou pessoas a quem você deseja enviar a mensagem
-
         options = webdriver.ChromeOptions()
 
         self.driver = webdriver.Chrome(
@@ -19,11 +14,13 @@ class WhatsappBot():
 
     def EnviarMensagens(self,numero,nome):
         self.grupos_ou_pessoas = numero
+        
         self.nome = nome
         mensagem = ("Olá" +self.nome)
-        # self.driver.get('https://web.whatsapp.com/')
+
         time.sleep(3)
         for grupo_ou_pessoa in self.grupos_ou_pessoas:
+           
             self.driver.get('https://web.whatsapp.com/send?phone=' + str(grupo_ou_pessoa))
             time.sleep(10)
         
