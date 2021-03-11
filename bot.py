@@ -36,8 +36,9 @@ class WhatsappBot():
 
 
 
-linhas = pd.read_csv(open('numeros.csv'), delimiter=',')
+users = pd.read_csv(open('numeros.csv'), delimiter=',')
 
-print(str(linhas.numero))
+print(users)
 
-WhatsappBot().EnviarMensagens(linhas.numero,linhas.nome)
+
+WhatsappBot().EnviarMensagens(users.numero,users.nome)
